@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
-function App() {
+function Lightbulb() {
+  const [isOn, setIsOn] = useState(false);
+
+  const toggleSwitch = () => {
+    setIsOn(!isOn);
+  };
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <img src={isOn ?'light_on.png':'light_off.jpg'} className='light' />
+     <div>
+      <button onClick={toggleSwitch} className={isOn ? 'b_on':'b_off'}>
+        {isOn ? 'ON' : 'OFF'}
+      </button>  
+      </div>
     </div>
   );
 }
 
-export default App;
+export default Lightbulb;
