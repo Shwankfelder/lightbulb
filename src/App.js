@@ -15,6 +15,7 @@ function Lightbulb() {
       <button onClick={toggleSwitch} className={isOn ? 'b_on':'b_off'}>
         {isOn ? 'ON' : 'OFF'}
       </button>  
+      
       </div>
     </div>
   );
